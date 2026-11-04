@@ -1,6 +1,10 @@
 # Algoradix firmware
 
-<img src="docs/images/front-panel.png" align="right" width="300" alt="Algoradix front panel">
+<p align="center">
+  <img src="docs/images/ui-navigation.gif" width="560" alt="Navigating the Algoradix menu: pages, patches, library, mode, knob overlays">
+  <br><sub>The menu, drawn by the firmware's own screen code and slide timing in the simulator (<code>make -C sim ui-video</code>).
+  <a href="docs/images/ui-navigation.mp4">MP4</a></sub>
+</p>
 
 Open firmware for **Algoradix**, a 12 HP Eurorack synth voice by **Roffa Logics** built around an
 [Axoloti Core v1.2](https://github.com/axoloti/axoloti) (STM32F427 at 168 MHz, ADAU1961 codec, 8 MB SDRAM,
@@ -20,8 +24,6 @@ cable that flashes the module.
 > **What's included:** the host firmware, the patch SDK with three demo patches and two templates, a desktop
 > simulator that renders patches to WAV through the same DSP code, and the tools to build card content.
 > The large patch library we run on our own units isn't part of this release.
-
-<br clear="right">
 
 ## Contents
 
@@ -95,9 +97,8 @@ back to it. A big overlay names what you're changing. TUNE is never layered.
   (the selected option is shown inverted). Hold for 0.6 s to go back.
 
 <p align="center">
-  <img src="docs/images/ui-navigation.gif" width="480" alt="Navigating the menu: pages, patches, library, mode, knob overlays">
-  <br><sub>A scripted session drawn by the firmware's own screen code and slide timing (<code>make -C sim ui-video</code>).
-  <a href="docs/images/ui-navigation.mp4">MP4</a> · <a href="docs/images/ui-screens.png">all screens</a></sub>
+  <img src="docs/images/ui-screens.png" width="480" alt="The firmware's screens, rendered by the simulator">
+  <br><sub>Every screen, rendered pixel-exact by the simulator (<code>make -C sim ui</code>). The tinted edges are hidden by the faceplate.</sub>
 </p>
 
 | Page | Options |
