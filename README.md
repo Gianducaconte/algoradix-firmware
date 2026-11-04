@@ -90,11 +90,14 @@ back to it. A big overlay names what you're changing. TUNE is never layered.
 
 ### Menu: one word per screen, sliding horizontally
 
-<img src="docs/images/ui-screens.png" align="right" width="320" alt="UI screens rendered by the simulator">
-
 - **Main menu:** one big word. Turn the encoder for the next or previous page, click to open it.
 - **Option list:** a small caption with the option shown big below. Turn to move between options, click to select
   (the selected option is shown inverted). Hold for 0.6 s to go back.
+
+<p align="center">
+  <img src="docs/images/ui-screens.png" width="480" alt="The firmware's screens, rendered by the simulator">
+  <br><sub>The firmware's own screens, rendered pixel-exact by the simulator (<code>make -C sim ui</code>).</sub>
+</p>
 
 | Page | Options |
 |---|---|
@@ -118,8 +121,6 @@ Mode, Assign, Filter and Inputs only appear when the patch asks for them. A patc
 **Every patch keeps its own settings.** The FUNC-layer values, Mode, Assign, Filter, Inputs and the Library item are
 stored per patch in flash and come back when you select that patch again. Saving is automatic, 3 s after a change
 once no note is sounding.
-
-<br clear="right">
 
 ## MIDI CC map
 
