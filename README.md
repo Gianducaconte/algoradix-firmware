@@ -82,6 +82,10 @@ Without a card, the module boots into the built-in engine and is fully playable.
 
 ## What the panel does
 
+<p align="center">
+  <img src="docs/images/front-panel.png" width="260" alt="Algoradix front panel">
+</p>
+
 The printed labels are positions, not fixed meanings. **When you move a knob, the display shows its name for the
 current patch** with a bar for 1.5 s. For example, f1 and f2 show the patch's own macro names, such as Shape and Sub.
 
