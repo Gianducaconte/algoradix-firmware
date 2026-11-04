@@ -1,6 +1,6 @@
 # Algoradix firmware
 
-<img src="docs/images/front-panel.jpg" align="right" width="260" alt="Algoradix front panel">
+<img src="docs/images/front-panel.png" align="right" width="300" alt="Algoradix front panel">
 
 Open firmware for **Algoradix**, a 12 HP Eurorack synth voice by **Roffa Logics** built around an
 [Axoloti Core v1.2](https://github.com/axoloti/axoloti) (STM32F427 at 168 MHz, ADAU1961 codec, 8 MB SDRAM,
@@ -74,7 +74,7 @@ current patch** with a bar for 1.5 s. For example, f1 and f2 show the patch's ow
 | AUDIO IN | set on the Inputs page: off, mixed into the output, or **ring-modulated** with the synth |
 | MIDI IN + USB HOST | notes, velocity, pitch bend, sustain pedal, mod wheel (vibrato), clock, CCs. Both inputs are **merged**. Everything goes out of **MIDI OUT (thru, always on)** as whole messages |
 
-### FUNC layer: hold the yellow button and turn a knob
+### FUNC layer: hold the GATE button and turn a knob
 
 FUNC changes are relative, with pick-up. While FUNC is held, the knob's normal value is frozen until you move the knob
 back to it. A big overlay names what you're changing. TUNE is never layered.

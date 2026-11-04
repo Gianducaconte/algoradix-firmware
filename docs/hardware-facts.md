@@ -39,7 +39,7 @@ with 144-cycle sampling.
 
 | Panel | MCU pin | Notes |
 |---|---|---|
-| GATE button (yellow) | PB6 | **active high**, internal pull-down |
+| GATE button (blue) | PB6 | **active high**, internal pull-down |
 | Encoder push | PB7 | **active high**, internal pull-down |
 | Encoder A / B | PC5 / PA2 | EC11, 20 detents, one full quadrature cycle per detent, pull-ups on the board |
 | Ring LED 1 (ALGO, top left) | PA6 | active high, TIM3_CH1 capable |
