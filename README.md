@@ -14,6 +14,28 @@ repository **[algoradix-hardware](https://github.com/Gianducaconte/algoradix-har
 This is a **from-scratch, bare-metal C firmware**. It uses no Axoloti code and no RTOS. The only third-party code is
 ARM CMSIS, ST's device header, FatFs and TinyUSB.
 
+## Why a new firmware
+
+> *The Axoloti Core has always been powerful hardware held back by its software. Algoradix keeps the hardware and
+> replaces everything else.*
+
+Algoradix uses the Axoloti Core **only as a board**. The Axoloti firmware, its runtime and the Java patcher are
+gone, and nothing has to be connected to a computer. What's left is the bare chip: a 168 MHz Cortex-M4 with an FPU,
+a 24-bit codec, 8 MB of SDRAM, an SD card and two USB ports, running code written directly for it. The interface
+board adds the rest: Eurorack-level CV and audio, eight pots, an encoder, a display and TRS MIDI.
+
+- **All of the processor goes to the sound.** There's no generic object runtime or RTOS between the audio interrupt
+  and the DSP. The voice code is compiled with whole-program optimisation, so oscillators, filters and envelopes are
+  inlined into one loop per voice.
+- **Patches are plain C.** A patch is a small C file built against a shared DSP library (oscillators, ladder and
+  state-variable filters, envelopes, a polyphonic allocator, effects). Patches load from the SD card in a moment,
+  with no reflash. They can be written by hand or with an AI coding agent, using [PATCH-GUIDE.md](firmware/patchsdk/PATCH-GUIDE.md).
+- **It's a self-contained instrument.** Knob names, two effect slots, a menu, per-patch presets, MIDI from DIN and
+  USB host, and a USB drive for the card, all on the module.
+- **Recreating other instruments is realistic.** What makes a sound recognisable (oscillator types, filter settings,
+  envelopes, LFOs and their modulation routings) can be rebuilt as a patch. Large banks of existing synth presets
+  have been rebuilt this way on our own units.
+
 The firmware is a **patch host**. It runs the hardware: panel, menu, MIDI over DIN and USB host with merge and thru,
 two effect slots, master volume, SD card and USB. The sound engine is a **patch file on the SD card** (`.APX`). It is
 loaded into RAM and **swapped without a reboot**. Each patch declares its own knob names, its two effects and its menu
@@ -27,6 +49,7 @@ cable that flashes the module.
 
 ## Contents
 
+- [Why a new firmware](#why-a-new-firmware)
 - [Quick start](#quick-start-flash-the-release)
 - [What the panel does](#what-the-panel-does)
 - [MIDI CC map](#midi-cc-map)
