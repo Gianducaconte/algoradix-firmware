@@ -1,0 +1,1 @@
+TinyUSB 88c7f0b (2026-09-16), MIT. Only the host stack, the MIDI host class and the Synopsys DWC2 port for STM32 are vendored, unmodified. tusb_config.h is ours.
