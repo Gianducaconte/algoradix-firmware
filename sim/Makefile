@@ -18,6 +18,11 @@ ui:
 	@mkdir -p build/ui
 	$(CC) -O2 -std=c11 -Wall -Wextra -I$(FW) -I$(FW)/panel $(FW)/panel/gfx.c $(FW)/panel/font_ui.c $(FW)/ui/screens.c ui_preview.c -o build/ui_preview
 	./build/ui_preview && python3 ../tools/ui_preview.py build/ui
+# animated UI: a scripted menu session -> build/ui/ui-navigation.mp4 and .gif (needs ffmpeg)
+ui-video:
+	@mkdir -p build/ui
+	$(CC) -O2 -std=c11 -Wall -Wextra -I$(FW) -I$(FW)/panel $(FW)/panel/gfx.c $(FW)/panel/font_ui.c $(FW)/ui/screens.c ui_anim.c -o build/ui_anim
+	./build/ui_anim && python3 ../tools/ui_video.py build/ui
 run: build/sim
 	./build/sim build/polyvoice.wav
 clean:

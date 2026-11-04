@@ -95,8 +95,9 @@ back to it. A big overlay names what you're changing. TUNE is never layered.
   (the selected option is shown inverted). Hold for 0.6 s to go back.
 
 <p align="center">
-  <img src="docs/images/ui-screens.png" width="480" alt="The firmware's screens, rendered by the simulator">
-  <br><sub>The firmware's own screens, rendered pixel-exact by the simulator (<code>make -C sim ui</code>).</sub>
+  <img src="docs/images/ui-navigation.gif" width="480" alt="Navigating the menu: pages, patches, library, mode, knob overlays">
+  <br><sub>A scripted session drawn by the firmware's own screen code and slide timing (<code>make -C sim ui-video</code>).
+  <a href="docs/images/ui-navigation.mp4">MP4</a> · <a href="docs/images/ui-screens.png">all screens</a></sub>
 </p>
 
 | Page | Options |
@@ -219,6 +220,7 @@ anything:
 cd sim
 make apx PATCH=demo/bass.c && ./build/apxsim out.wav      # a card patch through the real ABI and effect slots
 make ui                                                   # the firmware's screens -> build/ui/sheet.png
+make ui-video                                             # a scripted menu session -> build/ui/ui-navigation.mp4 / .gif (ffmpeg)
 make && ./build/sim out.wav 0                             # the built-in engines (index 0..19)
 ```
 
@@ -234,7 +236,7 @@ You can script the render with environment variables: `SEQ="t:note:vel:dur,…"`
 | `firmware/board/board_algoradix.h` | every pin and every measured hardware constant, in one file |
 | `firmware/patchsdk/` | the patch SDK: ABI (`apx.h`), instrument adapter, linker script, demo patches, templates, [PATCH-GUIDE.md](firmware/patchsdk/PATCH-GUIDE.md) |
 | `sim/` | desktop build of the DSP and UI code |
-| `tools/` | `apx_pack.py` (finishes a patch file), `make_demo_wavs.py` (SampSy demo sounds), `make_ui_font.py` + `fonts/`, `ui_preview.py`, `axb_convert.py` (sample bank converter for the STAGE 3 synth) |
+| `tools/` | `apx_pack.py` (finishes a patch file), `make_demo_wavs.py` (SampSy demo sounds), `make_ui_font.py` + `fonts/`, `ui_preview.py`, `ui_video.py`, `axb_convert.py` (sample bank converter for the STAGE 3 synth) |
 | `docs/` | [flashing and recovery](docs/flashing.md), [measured hardware facts](docs/hardware-facts.md) |
 | `releases/` | release binaries and checksums |
 
