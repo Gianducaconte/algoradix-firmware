@@ -1,7 +1,7 @@
 # Algoradix firmware
 
 <p align="center">
-  <img src="docs/images/ui-navigation.gif" width="560" alt="Navigating the Algoradix menu: pages, patches, library, mode, knob overlays">
+  <img src="docs/images/ui-navigation.gif" width="480" alt="Navigating the Algoradix menu: pages, patches, library, mode, knob overlays">
   <br><sub>The menu, drawn by the firmware's own screen code and slide timing in the simulator (<code>make -C sim ui-video</code>).
   <a href="docs/images/ui-navigation.mp4">MP4</a></sub>
 </p>
